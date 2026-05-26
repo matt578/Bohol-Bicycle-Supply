@@ -7,12 +7,7 @@ $pass = getenv('MYSQLPASSWORD');
 $db   = getenv('MYSQLDATABASE');
 $port = getenv('MYSQLPORT');
 
-echo "<pre>";
-echo "HOST: ".$host."<br>";
-echo "USER: ".$user."<br>";
-echo "DB: ".$db."<br>";
-echo "PORT: ".$port."<br>";
-echo "</pre>";
+
 
 $conn = new mysqli(
     $host,
