@@ -1,10 +1,18 @@
 <?php
+// Railway MySQL connection
 
-$host = $_ENV['MYSQLHOST'] ?? getenv('MYSQLHOST');
-$user = $_ENV['MYSQLUSER'] ?? getenv('MYSQLUSER');
-$pass = $_ENV['MYSQLPASSWORD'] ?? getenv('MYSQLPASSWORD');
-$db   = $_ENV['MYSQLDATABASE'] ?? getenv('MYSQLDATABASE');
-$port = $_ENV['MYSQLPORT'] ?? getenv('MYSQLPORT');
+$host = getenv('MYSQLHOST');
+$user = getenv('MYSQLUSER');
+$pass = getenv('MYSQLPASSWORD');
+$db   = getenv('MYSQLDATABASE');
+$port = getenv('MYSQLPORT');
+
+echo "<pre>";
+echo "HOST: ".$host."<br>";
+echo "USER: ".$user."<br>";
+echo "DB: ".$db."<br>";
+echo "PORT: ".$port."<br>";
+echo "</pre>";
 
 $conn = new mysqli(
     $host,
@@ -14,8 +22,8 @@ $conn = new mysqli(
     (int)$port
 );
 
-if ($conn->connect_error){
-    die($conn->connect_error);
+if ($conn->connect_error) {
+    die('Database connection failed: ' . $conn->connect_error);
 }
 
 $conn->set_charset('utf8mb4');
