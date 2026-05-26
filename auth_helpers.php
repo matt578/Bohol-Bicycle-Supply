@@ -3,12 +3,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$host = "localhost";
-$db   = "auth_db";
-$user = "root";
-$pass = "";
+<?php
 
-$conn = new mysqli($host, $user, $pass, $db);
+require_once 'db.php';
+
+// keep your existing functions below
 
 if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
