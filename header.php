@@ -252,7 +252,7 @@ body.light-mode .content-card {
     <div class="collapse navbar-collapse" id="topNav">
         <ul class="navbar-nav ms-2">
             <li class="nav-item"><a class="nav-link <?= ($current_page == 'pos.php') ? 'active' : '' ?>" href="pos.php">POS</a></li>
-            <li class="nav-item"><a class="nav-link <?= ($current_page == 'dashboard.php') ? 'active' : '' ?>" href="dashboard.php">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link <?= ($current_page == 'dashboard.php') ? 'active' : '' ?>" href="Dashboard.php">Dashboard</a></li>
             <li class="nav-item"><a class="nav-link <?= ($current_page == 'inventory.php') ? 'active' : '' ?>" href="inventory.php">Inventory</a></li>
             <li class="nav-item"><a class="nav-link <?= ($current_page == 'sales_order.php') ? 'active' : '' ?>" href="sales_order.php">Sales</a></li>
             <li class="nav-item"><a class="nav-link <?= ($current_page == 'suppliers.php') ? 'active' : '' ?>" href="suppliers.php">Suppliers</a></li>
