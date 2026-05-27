@@ -21,7 +21,7 @@ function completeLogin(array $row, mysqli $conn, string $method = 'email') {
     $_SESSION['email'] = $row['email'] ?? '';
     $_SESSION['login_method'] = $method;
 
-    header('Location: dashboard.php');
+    header('Location: Dashboard.php');
     exit();
 }
 
