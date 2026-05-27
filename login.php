@@ -9,7 +9,7 @@ require 'db.php';          // ADD THIS LINE
 require 'auth_helpers.php';
 
 if (isset($_SESSION['user_id'])) {
-    header('Location: dashboard.php');
+    header('Location: Dashboard.php');
     exit();
 }
 
