@@ -5,19 +5,24 @@ $host = getenv('DB_HOST');
 $user = getenv('DB_USERNAME');
 $pass = getenv('DB_PASSWORD');
 $db   = getenv('DB_DATABASE');
-$port = getenv('DB_PORT');
+$port = (int)getenv('DB_PORT');
 
-$conn = new mysqli(
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+$conn = mysqli_init();
+
+// Enable SSL for TiDB Cloud
+$conn->ssl_set(NULL, NULL, NULL, NULL, NULL);
+
+$conn->real_connect(
     $host,
     $user,
     $pass,
     $db,
-    (int)$port
+    $port,
+    NULL,
+    MYSQLI_CLIENT_SSL
 );
-
-if ($conn->connect_error) {
-    die('Database connection failed: ' . $conn->connect_error);
-}
 
 $conn->set_charset('utf8mb4');
 ?>
